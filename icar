@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Racecar Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <nav>
+        <ul>
+          <li v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.title }}</li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section v-for="section in sections" :key="section.id">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.content }}</p>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; {{ currentYear }} Racecar MIT</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
