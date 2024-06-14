@@ -75,6 +75,61 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 92px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 76px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title h2:before,
+.section-title h2:after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--accent-color);
+  display: inline-block;
+}
+
+.section-title h2:before {
+  margin: 0 15px 10px 0;
+}
+
+.section-title h2:after {
+  margin: 0 0 10px 15px;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+/*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
 section {
@@ -278,8 +333,8 @@ section {
 }
 
 .test{
-  font-size: 38px;
-  margin-top: 10px;
+  font-size: 30px;
+  margin-top: 12px;
   font-weight: 480;
   color: #f0f1f2;
 }
@@ -599,12 +654,34 @@ section {
 
 
 .get-started .content p {
-  font-size: 16px;
+  font-size: 24px;
 }
 
-.get-started .demo-video {
-  margin-top: 90px;
-  margin-left:0px;
+
+
+.get-started .bio-photo {
+  text-align: center;
+}
+
+.get-started .bio-photo img {
+  border-radius: 5px;
+  margin-top: 20px;
+  max-width: 300px;
+  height: auto;
+}
+
+.get-started .bio-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.get-started .bio-content .content {
+  order: 1;
+}
+
+.get-started .bio-content .bio-photo {
+  order: 2;
 }
 
 /* 小螢幕設備的調整 */
@@ -655,22 +732,27 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Services Section
+# Patents Section
 --------------------------------------------------------------*/
-.services .service-item {
+.patents {
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.patents .service-item {
   padding: 40px;
-  background: #fff;
+  box-shadow: 0px 0 30px color-mix(in srgb, var(--default-color), transparent 90%);
+  background-color: var(--contrast-color);
   height: 100%;
 }
 
-.services .service-item .icon {
+.patents .patents-item .icon {
   width: 48px;
   height: 48px;
   position: relative;
   margin-bottom: 50px;
 }
 
-.services .service-item .icon i {
+.patents .patents-item .icon i {
   color: var(--color-secondary);
   font-size: 40px;
   transition: ease-in-out 0.3s;
@@ -679,12 +761,12 @@ section {
   line-height: 1.8;
 }
 
-.services .service-item .icon:before {
+.patents .patents-item .icon:before {
   position: absolute;
   content: "";
   height: 100%;
   width: 100%;
-  background: #f0f1f2;
+  background: color-mix(in srgb, var(--heading-color), transparent 95%);
   border-radius: 50px;
   z-index: 1;
   top: 10px;
@@ -692,36 +774,119 @@ section {
   transition: 0.3s;
 }
 
-.services .service-item h3 {
-  color: var(--color-default);
+.patents .patents-item h3 {
+  color: color-mix(in srgb, var(--heading-color), transparent 20%);
   font-weight: 700;
   margin: 0 0 20px 0;
   padding-bottom: 8px;
   font-size: 22px;
   position: relative;
   display: inline-block;
-  border-bottom: 4px solid #ebebed;
+  border-bottom: 4px solid color-mix(in srgb, var(--heading-color), transparent 90%);
   transition: 0.3s;
 }
 
-.services .service-item p {
+.patents .patents-item p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.services .service-item .readmore {
+.patents .patents-item .readmore {
   margin-top: 15px;
   display: inline-block;
   color: var(--color-primary);
 }
 
-.services .service-item:hover .icon:before {
+.patents .patents-item:hover .icon:before {
   background: var(--color-primary);
 }
 
-.services .service-item:hover h3 {
+.patents .patents-item:hover h3 {
   border-color: var(--color-primary);
+}
+
+/*--------------------------------------------------------------
+# Paper Section
+--------------------------------------------------------------*/
+.paper .features-image {
+  position: relative;
+  min-height: 400px;
+}
+
+.paper .features-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.paper h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.paper h3:after {
+  content: "";
+  background: var(--accent-color);
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+}
+
+.paper .icon-box {
+  margin-top: 50px;
+}
+
+.paper .icon-box i {
+  color: var(--accent-color);
+  background-color: var(--contrast-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  font-size: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  line-height: 0;
+  box-shadow: 0px 2px 30px color-mix(in srgb, var(--default-color), transparent 90%);
+  transition: 0.3s;
+}
+
+.paper .icon-box:hover i {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.paper .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.paper .icon-box h4 a {
+  color: var(--heading-color);
+  transition: 0.3s;
+}
+
+.paper .icon-box h4 a:hover {
+  color: var(--accent-color);
+}
+
+.paper .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1044,15 +1209,15 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Alt Services Section
+# Paper  Section
 --------------------------------------------------------------*/
-.alt-services .img-bg {
+.paper .img-bg {
   background-size: cover;
   background-position: center center;
   min-height: 400px;
 }
 
-.alt-services h3 {
+.paper h3 {
   font-size: 28px;
   font-weight: 700;
   color: var(--color-secondary);
@@ -1061,7 +1226,7 @@ section {
   position: relative;
 }
 
-.alt-services h3:after {
+.paper h3:after {
   content: "";
   position: absolute;
   display: block;
@@ -1072,11 +1237,11 @@ section {
   bottom: 0;
 }
 
-.alt-services .icon-box {
+.paper .icon-box {
   margin-top: 50px;
 }
 
-.alt-services .icon-box i {
+.paper .icon-box i {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1092,27 +1257,27 @@ section {
   transition: 0.3s;
 }
 
-.alt-services .icon-box:hover i {
+.paper .icon-box:hover i {
   background-color: var(--color-primary);
   color: #fff;
 }
 
-.alt-services .icon-box h4 {
+.paper .icon-box h4 {
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 18px;
 }
 
-.alt-services .icon-box h4 a {
+.paper .icon-box h4 a {
   color: #000;
   transition: 0.3s;
 }
 
-.alt-services .icon-box h4 a:hover {
+.paper .icon-box h4 a:hover {
   color: var(--color-primary);
 }
 
-.alt-services .icon-box p {
+.paper .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
