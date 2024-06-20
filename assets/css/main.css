@@ -259,7 +259,7 @@ section {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background: var(--color-primary);
+  background-color: var(--accent-color);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -268,13 +268,13 @@ section {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--color-secondary);
+  color: var(--default-color);
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background: #ffc732;
-  color: #fff;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
 }
 
 .scroll-top.active {
@@ -372,10 +372,10 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
-.navmenu {
-  padding: 0;
-}
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
 
   .navmenu ul {
     margin: 0;
@@ -391,23 +391,27 @@ section {
 
   .navmenu>ul>li {
     white-space: nowrap;
-    padding: 10px 0 10px 28px;
+    padding: 15px 14px;
+  }
+
+  .navmenu>ul>li:last-child {
+    padding-right: 0;
   }
 
   .navmenu a,
   .navmenu a:focus {
+    color: var(--nav-color);
+    font-size: 14px;
+    padding: 0 2px;
+    font-family: var(--nav-font);
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3px;
-    font-family: var(--font-primary);
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
+    text-transform: uppercase;
   }
 
   .navmenu a i,
@@ -415,16 +419,16 @@ section {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
+    transition: 0.3s;
   }
 
   .navmenu>ul>li>a:before {
     content: "";
     position: absolute;
-    width: 100%;
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: var(--color-primary);
+    background-color: var(--accent-color);
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -437,25 +441,26 @@ section {
     width: 100%;
   }
 
-  .navmenu a:hover,
+  .navmenu li:hover>a,
   .navmenu .active,
-  .navmenu .active:focus,
-  .navmenu li:hover>a {
-    color: #fff; /*作用中頁面的標籤顏色*/
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
   }
+
   .navmenu .dropdown ul {
-    display: block;
-    position: absolute;
-    left: 28px;
-    top: calc(100% + 30px);
     margin: 0;
     padding: 10px 0;
-    z-index: 99;
-    opacity: 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
     visibility: hidden;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    left: 14px;
+    top: 130%;
+    opacity: 0;
     transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
   .navmenu .dropdown ul li {
@@ -466,8 +471,8 @@ section {
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
-    color: var(--color-default);
     font-weight: 400;
+    color: var(--nav-dropdown-color);
   }
 
   .navmenu .dropdown ul a i {
@@ -477,7 +482,7 @@ section {
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover>a {
-    color: var(--color-primary);
+    color: var(--nav-dropdown-hover-color);
   }
 
   .navmenu .dropdown:hover>ul {
@@ -488,23 +493,19 @@ section {
 
   .navmenu .dropdown .dropdown ul {
     top: 0;
-    left: calc(100% - 30px);
+    left: -90%;
     visibility: hidden;
   }
 
   .navmenu .dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
-    left: 100%;
+    left: -100%;
     visibility: visible;
   }
 }
 
-
-
-/*--------------------------------------------------------------
-# Mobile Navigation
---------------------------------------------------------------*/
+/* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
@@ -1365,19 +1366,44 @@ section {
 }
 
 .team .member .member-img {
-  margin: 0 80px;
+  margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  width: 200px; /* 增大寬度 */
+  height: 200px; /* 增大高度 */
+}
+/* Graduate Member Background */
+.graduate-member {
+  
 }
 
 @media (max-width: 1024px) {
   .team .member .member-img {
     margin: 0 60px;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .team .member {
+    flex: 0 0 33.3333%; /* 每行顯示三個成員 */
+    max-width: 33.3333%; /* 每行顯示三個成員 */
+  }
+}
+
+@media (max-width: 576px) {
+  .team .member {
+    flex: 0 0 50%; /* 每行顯示兩個成員 */
+    max-width: 50%; /* 每行顯示兩個成員 */
   }
 }
 
 .team .member .member-img img {
+  width: 100%; /* 確保圖片填滿容器 */
+  height: 100%; /* 確保圖片填滿容器 */
+  object-fit: cover; /* 保持圖片比例 */
   position: relative;
   z-index: 1;
 }
@@ -1436,6 +1462,9 @@ section {
   visibility: visible;
   opacity: 1;
 }
+
+
+
 
 /*--------------------------------------------------------------
 # Servie Cards Section
@@ -1906,13 +1935,14 @@ section {
 .hero {
   overflow-x: hidden;
   padding: 0;
+  height: 50vh;
 }
 
 .hero .carousel-item {
   position: absolute;
   inset: 0;
-  background-size: contain; /* 確保圖片等比例縮放 */
-  background-position: center;
+  background-size: cover; /* 確保圖片等比例縮放 */
+  background-position: bottom;
   background-repeat: no-repeat;
   overflow: hidden;
   z-index: 1;
@@ -1923,15 +1953,16 @@ section {
 
 .hero .carousel-item img {
   width: 100%;
-  height: auto;
-  object-fit: contain; /* 保持圖片的寬高比 */
+  height: 100%;
+  object-fit: cover; /* 保持圖片的寬高比並橫向滿版  */
+  object-position: bottom; /* 圖片顯示從下半部開始 */
   border: none; /* 確保圖片沒有邊框 */
   background: none; /* 確保圖片背景透明 */
 }
 
 .hero .carousel {
   width: 100%;
-  min-height: 100vh;
+  height: 55vh; /* 設定高度為視窗高度的一半 */
   padding: 80px 0;
   margin: 0;
   position: relative;
