@@ -1237,46 +1237,48 @@ section {
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about h2 {
-  font-size: 48px;
+.about .inner-title {
+  font-size: 2.75rem;
   font-weight: 700;
-  font-family: var(--font-secondary);
   margin: 30px 0;
+  margin-top: 40px;
 }
 
 @media (min-width: 991px) {
-  .about h2 {
+  .about .inner-title {
     max-width: 65%;
-    margin: 0 0 80px 0;
+    margin: 40px 0 80px 0; /* 調整大螢幕下的邊距 */
   }
 }
 
 .about .our-story {
-  padding: 40px;
-  background-color: #f5f6f7;
+  padding: 30px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
 }
 
 @media (min-width: 991px) {
   .about .our-story {
     padding-right: 35%;
+    margin-top: -30px; /* 調整 margin-top 來避免移動 */
   }
 }
 
 .about .our-story h4 {
   text-transform: uppercase;
-  font-size: 18px;
-  color: #838893;
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
 .about .our-story h3 {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--color-secondary);
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
+
 
 .about .our-story p:last-child {
   margin-bottom: 0;
+
 }
 
 .about ul {
@@ -1289,43 +1291,57 @@ section {
   padding: 5px 0;
   display: flex;
   align-items: center;
+  white-space: nowrap; /* 防止自動換行 */
 }
 
 .about ul i {
-  font-size: 20px;
-  margin-right: 4px;
-  color: var(--color-primary);
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+  line-height: 1.2;
+  color: var(--accent-color);
 }
 
 .about .watch-video i {
-  font-size: 32px;
+  font-size: 2rem;
   transition: 0.3s;
-  color: var(--color-primary);
+  color: var(--accent-color);
 }
 
 .about .watch-video a {
   font-weight: 600;
-  color: var(--color-secondary);
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-left: 8px;
   transition: 0.3s;
 }
 
 .about .watch-video:hover a {
-  color: var(--color-primary);
+  color: var(--accent-color);
 }
 
 .about .about-img {
-  min-height: 600px;
-  background-size: cover;
-  background-position: center;
+  min-height: 400px; /* 調整最小高度以縮小圖片 */
+  position: relative;
 }
 
 @media (min-width: 992px) {
   .about .about-img {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10%;
+    width: 30%; /* 設置寬度以縮小圖片 */
+    height: 600px; /* 調整高度以保持垂直長方形 */
   }
+}
+
+.about .about-img img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
 }
 
 /*--------------------------------------------------------------
@@ -1373,14 +1389,11 @@ section {
   width: 200px; /* 增大寬度 */
   height: 200px; /* 增大高度 */
 }
-/* Graduate Member Background */
-.graduate-member {
-  
-}
+
 
 @media (max-width: 1024px) {
   .team .member .member-img {
-    margin: 0 60px;
+    margin: 0 auto;
     width: 120px;
     height: 120px;
   }
@@ -1388,6 +1401,7 @@ section {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .team .member {
+    margin: 0 auto;
     flex: 0 0 33.3333%; /* 每行顯示三個成員 */
     max-width: 33.3333%; /* 每行顯示三個成員 */
   }
@@ -1395,6 +1409,7 @@ section {
 
 @media (max-width: 576px) {
   .team .member {
+    margin: 0 auto;
     flex: 0 0 50%; /* 每行顯示兩個成員 */
     max-width: 50%; /* 每行顯示兩個成員 */
   }
