@@ -368,9 +368,13 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
   .navmenu {
     padding: 0;
+  }
+
+  .mobile-nav-toggle {
+    display: none; /* 在桌面視圖中隱藏漢堡菜單 */
   }
 
   .navmenu ul {
@@ -502,8 +506,9 @@ section {
 }
 
 /* Mobile Navigation */
-@media (max-width: 1199px) {
+@media (max-width: 799px) {
   .mobile-nav-toggle {
+    display: block; /* 在手機視圖中顯示漢堡菜單 */
     color: var(--nav-color);
     font-size: 28px;
     line-height: 0;
@@ -759,10 +764,11 @@ h2 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  margin-left: 40px; /* 大螢幕上增加更多間距 */
 }
 
 .grid-item {
-  background-color: #e0e0e0;
+  background-color: #efefef;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -791,7 +797,7 @@ h2 {
   display: block;
   width: 100%;
   height: 5px;
-  background-color: #000;
+  background-color: #feb900; /* 修改這裡的顏色 */
   position: absolute;
   bottom: 0;
   left: 0;
@@ -800,6 +806,7 @@ h2 {
 
 .grid-item:hover:after {
   width: 0;
+  background-color: #feb900; /* 確保這裡的顏色也修改 */
 }
 
 @media (min-width: 992px) {
@@ -1376,7 +1383,17 @@ h2 {
   padding: 5px 0;
   display: flex;
   align-items: center;
+  overflow: hidden; /* 防止文字超出邊界 */
   white-space: nowrap; /* 防止自動換行 */
+  text-overflow: ellipsis; /* 文字超出顯示省略號 */
+}
+
+@media (min-width: 992px) {
+  .about ul li {
+    white-space: normal; /* 大螢幕上正常顯示 */
+    overflow: visible; /* 大螢幕上顯示完整文字 */
+    text-overflow: clip; /* 大螢幕上不顯示省略號 */
+  }
 }
 
 .about ul i {
@@ -1384,6 +1401,24 @@ h2 {
   margin-right: 0.5rem;
   line-height: 1.2;
   color: var(--accent-color);
+}
+
+.about .watch-video {
+  display: flex;
+  align-items: center;
+}
+
+.about .watch-video .link-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* 增加右邊距離使兩個連結分開 */
+}
+
+.about .watch-video .link-container a {
+  font-weight: 600;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-left: 8px;
+  transition: 0.3s;
 }
 
 .about .watch-video i {
@@ -1397,9 +1432,10 @@ h2 {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-left: 8px;
   transition: 0.3s;
+  display: inline-block; /* 確保鏈結是行內塊元素，便於樣式控制 */
 }
 
-.about .watch-video:hover a {
+.about .watch-video .link-container a:hover {
   color: var(--accent-color);
 }
 
