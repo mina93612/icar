@@ -1334,6 +1334,7 @@ h2 {
   font-weight: 700;
   margin: 30px 0;
   margin-top: 40px;
+  white-space: nowrap; /* 防止換行 */
 }
 
 @media (min-width: 991px) {
