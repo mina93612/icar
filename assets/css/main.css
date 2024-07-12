@@ -20,9 +20,9 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #364d59; /* Default color used for the majority of the text content across the entire website */
+  --default-color: #0c1c36; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #52565e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #feb900; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #4d8eb5; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --contrast-color: #ffffff; /* The contrast color is used for elements when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors */
 }
 
@@ -56,7 +56,7 @@ a {
 }
 
 a:hover {
-  color: #ffc732;
+  color: #77bde6;
   text-decoration: none;
 }
 
@@ -93,7 +93,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 76px;
@@ -162,7 +161,7 @@ section {
   font-size: 32px;
   font-weight: 700;
   position: relative;
-  color: #2e3135;
+  color: #1f2124;
 }
 
 .section-header h2:before,
@@ -743,7 +742,8 @@ section {
 # What We Do
 --------------------------------------------------------------*/
 .what-we-do {
-  padding: 50px 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .intro-container{
@@ -755,8 +755,8 @@ section {
 }
 
 h2 {
-  font-size: 5rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 600;
   margin-bottom: 30px;
 }
 
@@ -797,7 +797,7 @@ h2 {
   display: block;
   width: 100%;
   height: 5px;
-  background-color: #feb900; /* 修改這裡的顏色 */
+  background-color: transparent; 
   position: absolute;
   bottom: 0;
   left: 0;
@@ -805,8 +805,8 @@ h2 {
 }
 
 .grid-item:hover:after {
-  width: 0;
-  background-color: #feb900; /* 確保這裡的顏色也修改 */
+  width: 100%;
+  background-color: #77bde6; 
 }
 
 @media (min-width: 992px) {
@@ -1545,7 +1545,7 @@ h2 {
   z-index: 1;
 }
 
-.team .member .member-img .social {
+.team .member .member-img .thesis {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
@@ -1559,14 +1559,14 @@ h2 {
   opacity: 0;
 }
 
-.team .member .member-img .social a {
+.team .member .member-img .thesis a {
   transition: 0.3s;
   color: #fff;
   font-size: 20px;
   margin: 0 8px;
 }
 
-.team .member .member-img .social a:hover {
+.team .member .member-img .thesis a:hover {
   color: var(--color-primary);
 }
 
@@ -1594,7 +1594,7 @@ h2 {
   font-size: 14px;
 }
 
-.team .member:hover .member-img .social {
+.team .member:hover .member-img .thesis {
   padding-bottom: 0;
   visibility: visible;
   opacity: 1;
@@ -2110,31 +2110,25 @@ h2 {
 --------------------------------------------------------------*/
 #homepage {
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: relative;
-  background-image: url('assets/img/2.png'); /* 設置背景圖片 */
-  background-size: cover; /* 確保圖片等比例縮放 */
+  background-image: url('assets/img/hero.png'); /* 設置背景圖片 */
+  background-size: contain;  /* 確保圖片不會被裁剪 */
   background-position: center; /* 圖片居中 */
-  background-repeat: no-repeat; /* 不重複 */
+  background-repeat: no-repeat; 
+  margin-top: 56px;
 }
 
 #homepage .homepage-container {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 15px;
+  width: 100%;
+  max-width: 1920px; /* 設定最大寬度與圖片寬度一致 */
+  overflow: hidden; /* 確保圖片不會超出容器範圍 */
 }
 
 #homepage .homepage-logo {
   position: relative;
-  margin-bottom: 30px;
+  width: 100%;
+  height: auto;
 }
 
 #homepage .homepage-logo img {
@@ -2143,62 +2137,9 @@ h2 {
   height: auto;
 }
 
-#homepage h1,
-#homepage h2 {
-  position: relative;
-  z-index: 2; /* 確保文字在圖片之上 */
-}
-
-#homepage h1 {
-  margin: 0 0 30px 0;
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 56px;
-  color: #fff;
-}
-
-#homepage h2 {
-  color: #aeaeae;
-  margin-bottom: 30px;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-#homepage .btn-get-started {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 14px 30px;
-  border-radius: 3px;
-  margin: 10px;
-  color: #fff;
-  background: #7cc576;
-}
-
-#homepage .btn-get-started:hover {
-  transition: 0.5s;
-  background: #fff;
-  color: #7cc576;
-}
-
 @media (min-width: 1024px) {
   #homepage {
     background-attachment: fixed;
-  }
-}
-
-@media (max-width: 768px) {
-  #homepage h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  #homepage h2 {
-    line-height: 22px;
   }
 }
 
@@ -2956,10 +2897,6 @@ h2 {
   inset: 0;
 }
 
-/* .footer .footer-content .footer-info {
-  margin-bottom: 5px;
-} */
-
 .footer .footer-content .footer-info h3 {
   font-size: 26px;
   margin: 0 0 3px 0;
@@ -2972,70 +2909,15 @@ h2 {
   font-weight: 300;
 }
 
-/* .footer .footer-content .footer-info h3 span {
-  color: var(--color-primary);
-} */
-
 .footer .footer-content .footer-address p {
   font-size: 14px;
   line-height: 24px;
   font-family: var(--font-primary);
-  color: #cfcacaf3;
+  color: #cfcacafb;
 }
-
-.footer .footer-content .footer-address h4 {
-  font-size: 17px;
-  padding-top: 5px;
-  font-family: var(--font-primary);
-}
-
-.footer .footer-content .footer-links p {
-  font-size: 14px;
-  line-height: 24px;
-  font-family: var(--font-primary);
-  color: #cfcacaf3;
-}
-
-.footer .footer-content .footer-links h4 {
-  font-size: 17px;
-  padding-top: 5px;
-  font-family: var(--font-primary);
-}
-
-
-
-
-
-/* .footer .footer-content .footer-address ul li {
-  padding: 8px 0;
-} */
-
-/* .footer .footer-content .footer-address ul li:first-child {
-  padding-top: 0;
-} */
-
-/* .footer .footer-content .footer-address ul a {
-  color: rgba(255, 255, 255, 0.6);
-  transition: 0.3s;
-  display: inline-block;
-  line-height: 1;
-} */
-
-/* .footer .footer-content .footer-address ul a:hover {
-  color: #fff;
-} */
 
 .footer .footer-legal .copyright {
-  padding-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.footer .footer-legal .credits {
-  padding-top: 4px;
-  font-size: 13px;
-  color: #fff;
-}
-
-.footer .footer-legal .credits a {
-  color: var(--color-primary);
 }
