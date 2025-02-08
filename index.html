@@ -167,10 +167,10 @@
 
               <div class="post-content d-flex flex-column">
 
-                <h3 class="post-title">Autocar 整合自駕硬體與感測系統</h3>
+                <h3 class="post-title">DRL passenger car: LKA & ACC</h3>
 
                 <p>
-                  使用 ROS 控制馬達、光達和超音波感測器。透過 RPLidar 和里程計生成 2D 地圖，用 AMCL 定位，A* 演算法規劃路徑，Stanley 控制器跟隨路徑並修正誤差，最後透過 Arduino 實現自動駕駛。
+                  利用深度強化學習（DRL）開發自適應巡航控制（ACC）與車道保持輔助（LKA），採用雙Actor架構協同控制車速與轉向。透過模擬訓練，學習在複雜交通中靈活調整車速與方向，提升系統穩定性與適應性。
                 </p>
               </div>
 
@@ -185,9 +185,9 @@
               </div>
 
               <div class="post-content d-flex flex-column">
-                <h3 class="post-title">多感測器校正 - Lidar & Camera</h3>
+                <h3 class="post-title">DRL BUS: LKA & ACC</h3>
                 <p>
-                  透過時間校正演算法和轉換矩陣，在不損失資料的情況下，對齊影像時間軸和座標位置，將 Camera 影像資訊以及 Lidar 的3D點雲資訊互相進行整合。
+                  本研究針對公車轉向與速度控制，採用深度強化學習（DRL）並設計two-branch架構，分別輸出速度與轉向控制。不僅能分類駕駛模式，還可輸出連續控制量，提升行車平順性與安全性，適用於智慧駕駛輔助與自動駕駛公車應用。 
                 </p>
               </div>
 
