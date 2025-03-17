@@ -97,6 +97,14 @@ section,
   .section {
     scroll-margin-top: 76px;
   }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+  }
+  
+
 }
 
 /*--------------------------------------------------------------
@@ -109,7 +117,7 @@ section,
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   position: relative;
 }
@@ -1158,7 +1166,7 @@ section {
 # About Section
 --------------------------------------------------------------*/
 .about .inner-title {
-  font-size: 2.75rem;
+  font-size: 1.75rem;
   font-weight: 700;
   margin: 10px 0;
   white-space: nowrap; /* 防止換行 */
@@ -1167,6 +1175,7 @@ section {
 
 @media (min-width: 991px) {
   .about .inner-title {
+    font-size: 2.75rem;
     max-width: 100%;
     margin: 0px 0 20px 0;
     text-align: left;
@@ -1235,27 +1244,6 @@ section {
 
 }
 
-/* RWD：小螢幕時圖片與內容上下排列 */
-@media (max-width: 991px) {
-  .about .row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about .about-img {
-    width: 100%;
-    min-height: 300px;
-    margin-bottom: 20px;
-    
-  }
-
-  .about .our-story {
-    max-width: 100%;
-    padding: 20px;
-    text-align: center;
-  }
-}
 .about .our-story h4 {
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -1264,9 +1252,10 @@ section {
 }
 
 .about .our-story h3 {
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
+  text-align: center;
 }
 
 
@@ -1281,7 +1270,6 @@ section {
   display: flex;
   align-items: center;
   overflow: hidden; /* 防止文字超出邊界 */
-  white-space: nowrap; /* 防止自動換行 */
   text-overflow: ellipsis; /* 文字超出顯示省略號 */
 }
 
@@ -1290,6 +1278,12 @@ section {
     white-space: normal; /* 大螢幕上正常顯示 */
     overflow: visible; /* 大螢幕上顯示完整文字 */
     text-overflow: clip; /* 大螢幕上不顯示省略號 */
+  }
+
+  .about .our-story h3 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
   }
 }
 
