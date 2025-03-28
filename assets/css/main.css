@@ -1291,7 +1291,8 @@ section {
   font-size: 1.5rem;
   margin-right:1rem;
   line-height: 1.2;
-  color: var(--accent-color);
+  text-align: center;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 .about ul i {
   font-size: 1.25rem;
