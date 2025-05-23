@@ -65,7 +65,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6 { 
   font-family: var(--font-primary);
 }
 
@@ -1543,6 +1543,16 @@ section {
 /*--------------------------------------------------------------
 # Projet Details Section
 --------------------------------------------------------------*/
+/* 修正 hover 時只顯示對應區塊的 a 鏈結 */
+.projects .portfolio-item:hover .portfolio-info .preview-link {
+  display: inline-block;
+}
+
+/* 預設先隱藏所有 preview-link */
+.projects .portfolio-content .preview-link {
+  display: none;
+}
+
 .project-details .portfolio-details-slider img {
   width: 100%;
 }
