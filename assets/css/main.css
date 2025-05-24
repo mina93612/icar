@@ -1714,7 +1714,7 @@ section {
 # HomePage Hero Section
 --------------------------------------------------------------*/
 #homepage {
-  width: 100%;
+  width: 100vw;
   height: auto;
   position: relative;
   background-image: url('assets/img/hero.png'); /* 設置背景圖片 */
@@ -1726,7 +1726,7 @@ section {
 
 #homepage .homepage-container {
   width: 100%;
-  max-width: 1920px; /* 設定最大寬度與圖片寬度一致 */
+  max-width: none; /*1920px 設定最大寬度與圖片寬度一致 */
   overflow: hidden; /* 確保圖片不會超出容器範圍 */
 }
 
@@ -1738,6 +1738,7 @@ section {
 
 #homepage .homepage-logo img {
   display: block;
+  margin: 0 auto;     /* 水平置中 */
   max-width: 100%;
   height: auto;
 }
