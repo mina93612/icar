@@ -1915,7 +1915,11 @@ section {
 /*--------------------------------------------------------------
 # AutoCar Posts Section
 --------------------------------------------------------------*/
-
+.autocar-title {
+  background-color: #f5f6f7;  
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
 .projects .portfolio-flters {
   padding: 0;
   margin: 0 auto 20px auto;
@@ -1962,6 +1966,37 @@ section {
 .projects .portfolio-content img {
   transition: 0.3s;
 }
+
+
+.video-btn img {
+  width: 450px;          /* 固定寬度 */
+  height: 250px;         /* 固定高度 */
+  object-fit: cover;     /* 保持比例、裁切填滿框框 */
+  border-radius: 8px;    /* 圓角可選 */
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.video-btn img:hover {
+  border-color: #194059; /* 滑鼠移上時高亮邊框 */
+}
+
+/* 整體頁面底色（類似灰白） */
+.page-background {
+  background-color: #f5f6f7;
+  padding: 80px 0;
+}
+
+/* 單個車輛卡片區塊樣式 */
+.vehicle-card {
+  background-color: #ffffff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  padding: 40px 20px;
+  border-radius: 8px;
+  margin-bottom: 50px;
+}
+
 
 .projects .portfolio-content .portfolio-info {
   opacity: 0;
